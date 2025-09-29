@@ -1,0 +1,89 @@
+# ==================================================
+# Global Node / JS
+# ==================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log
+package-lock.json
+yarn.lock
+
+# ==================================================
+# Vite / React (todas las apps web)
+# ==================================================
+dist/
+.vite/
+*.local
+
+# ==================================================
+# React Native (si agregas proyectos móviles)
+# ==================================================
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+*.apk
+*.aar
+*.iml
+*.hprof
+
+# iOS
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+*.xcuserdatad
+*.mode1v3
+*.mode2v3
+
+# ==================================================
+# Apps específicas
+# ==================================================
+# mfe-dashboard
+/apps/mfe-dashboard/node_modules/
+/apps/mfe-dashboard/dist/
+
+# web-shell
+/apps/web-shell/node_modules/
+/apps/web-shell/dist/
+
+# (Si agregas más apps, repetir el patrón)
+# /apps/mi-nueva-app/node_modules/
+# /apps/mi-nueva-app/dist/
+
+# ==================================================
+# IDEs y editores
+# ==================================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ==================================================
+# 💻 Sistema operativo
+# ==================================================
+.DS_Store
+Thumbs.db
+
+# ==================================================
+# Archivos de entorno
+# ==================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==================================================
+# Testing / Coverage
+# ==================================================
+coverage/
+jest

@@ -1,0 +1,13 @@
+{
+  "name": "platform-clean",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev:shell": "pnpm -C apps/web-shell dev",
+    "dev:dashboard": "pnpm -C apps/mfe-dashboard build && pnpm -C apps/mfe-dashboard serve:remote",
+    "dev:mobile": "pnpm -C apps-mobile/mobile-app start"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
