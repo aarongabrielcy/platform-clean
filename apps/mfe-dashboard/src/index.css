@@ -1,0 +1,3 @@
+:root { --fg: #111; --muted: #777; }
+body { color: var(--fg); }
+a { color: var(--fg); text-decoration: none; }
