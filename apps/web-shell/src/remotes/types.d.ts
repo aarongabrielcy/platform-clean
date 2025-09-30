@@ -7,3 +7,8 @@ declare module "mfeUsers/app/index" {
   const App: import("react").ComponentType;
   export default App;
 }
+
+declare module "mfeVehicles/app/index" {
+  const App: import("react").ComponentType;
+  export default App;
+}

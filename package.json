@@ -5,6 +5,8 @@
   "scripts": {
     "dev:shell": "pnpm -C apps/web-shell dev",
     "dev:dashboard": "pnpm -C apps/mfe-dashboard build && pnpm -C apps/mfe-dashboard serve:remote",
+    "dev:users": "pnpm -C apps/mfe-users build && pnpm -C apps/mfe-users serve:remote",
+    "dev:vehicles": "pnpm -C apps/mfe-vehicles build && pnpm -C apps/mfe-vehicles serve:remote",    
     "dev:mobile": "pnpm -C apps-mobile/mobile-app start"
   },
   "devDependencies": {

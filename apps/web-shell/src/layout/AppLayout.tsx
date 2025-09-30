@@ -9,6 +9,7 @@ export default function AppLayout() {
         <nav style={{ display: "grid", gap: 8 }}>
           <Link to="/dashboard">Dashboard (MFE)</Link>
           <Link to="/users">Users (MFE)</Link>
+          <Link to="/vehicles">Vehicles (MFE)</Link>
         </nav>
       </aside>
       <main style={{ flex: 1, padding: 16 }}>
