@@ -13,7 +13,8 @@ export default defineConfig({
       name: "web_shell",
       remotes: {
         mfeDashboard: "http://127.0.0.1:5001/assets/remoteEntry.js",
-         mfeUsers:    "http://127.0.0.1:5002/assets/remoteEntry.js"
+        mfeUsers:     "http://127.0.0.1:5002/assets/remoteEntry.js",
+        mfeVehicles:  "http://127.0.0.1:5003/assets/remoteEntry.js",
       },
       shared: {
         react: { requiredVersion: false },
