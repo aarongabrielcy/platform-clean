@@ -3,7 +3,11 @@ import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
-  server: { port: 5000, strictPort: true },
+  server: { 
+    port: 5000,
+    strictPort: true,
+    fs: { allow: [".."] } // 👈 para hot-reload si usas /packages/*
+  },
   optimizeDeps: {
     // evita prebundles separados en dev
   },
@@ -12,9 +16,9 @@ export default defineConfig({
     federation({
       name: "web_shell",
       remotes: {
-        mfeDashboard: "http://127.0.0.1:5001/assets/remoteEntry.js",
-        mfeUsers:     "http://127.0.0.1:5002/assets/remoteEntry.js",
-        mfeVehicles:  "http://127.0.0.1:5003/assets/remoteEntry.js",
+        mfeDashboard: "http://localhost:5001/assets/remoteEntry.js",
+        mfeUsers:     "http://localhost:5002/assets/remoteEntry.js",
+        mfeVehicles:  "http://localhost:5003/assets/remoteEntry.js",
       },
       shared: {
         react: { requiredVersion: false },

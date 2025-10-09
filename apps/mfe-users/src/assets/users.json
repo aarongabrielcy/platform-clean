@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Alex Rivera",
+      "email": "alex.rivera@example.com",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Mariana Torres",
+      "email": "mariana.torres@example.com",
+      "role": "viewer",
+      "status": "blocked"
+    },
+    {
+      "id": 3,
+      "name": "Luis Gómez",
+      "email": "luis.gomez@example.com",
+      "role": "editor",
+      "status": "active"
+    }
+  ]
+}

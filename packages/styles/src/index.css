@@ -1,0 +1,28 @@
+/* packages/styles/src/index.css */
+
+/* tokens CSS (variables que uses) */
+:root{
+  --brand: #2563eb; /* ejemplo */
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+}
+
+/* Usa layers para que Tailwind pueda fusionarlo con @tailwind components */
+@layer base {
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 rounded-md bg-indigo-600 text-white text-sm font-medium shadow-sm;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: .5rem;
+    padding: 1rem;
+  }
+  .datatable td, .datatable th { padding: .5rem 1rem; }
+}

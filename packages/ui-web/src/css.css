@@ -1,0 +1,8 @@
+/*@import "@platform/styles/index.css";*/
+
+/* Útiles opcionales (ejemplo) */
+@layer components {
+  .btn-ghost {
+    @apply text-white/90 hover:text-white hover:bg-white/10;
+  }
+}

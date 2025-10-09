@@ -1,2 +1,12 @@
-:root { --fg: #111; }
-body { color: var(--fg); }
+/* apps/mfe-users/src/index.css */
+/* Estilos compartidos (btn, card, tokens) */
+@import "@platform/styles/index.css";
+
+/* (Opcional) utilidades/overrides propias del ui-web */
+/*@import "@platform/ui-web/css" layer(components);*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
