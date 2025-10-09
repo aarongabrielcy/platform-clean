@@ -1,18 +1,28 @@
+// apps/mfe-users/src/viewmodels/useListVM.ts
 import { useEffect, useState } from "react";
 import { listUsers, type User } from "../services/users.repo";
-import { useUsersUISlice } from "../state/ui.slice";
 
 export function useUsersListVM() {
+  const [data, setData] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
-  const [items, setItems] = useState<User[]>([]);
-  const { query, setQuery } = useUsersUISlice();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
-    const data = listUsers(query);
-    setItems(data);
-    setLoading(false);
-  }, [query]);
+    let cancelled = false;
+    (async () => {
+      try {
+        setLoading(true);
+        const rows = await listUsers();
+        if (!cancelled) setData(rows);
+      } catch (e: any) {
+        if (!cancelled) setError(e?.message ?? String(e));
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
-  return { items, loading, setQuery };
+  return { rows: data, loading, error };
 }
+

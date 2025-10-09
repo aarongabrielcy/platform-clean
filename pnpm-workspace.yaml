@@ -1,2 +1,5 @@
 ﻿packages:
   - "apps/*"
+  - "apps-mobile/*"
+  - "packages/*"
+  - "tools/*"

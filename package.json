@@ -4,12 +4,18 @@
   "version": "0.0.1",
   "scripts": {
     "dev:shell": "pnpm -C apps/web-shell dev",
-    "dev:dashboard": "pnpm -C apps/mfe-dashboard build && pnpm -C apps/mfe-dashboard serve:remote",
-    "dev:users": "pnpm -C apps/mfe-users build && pnpm -C apps/mfe-users serve:remote",
-    "dev:vehicles": "pnpm -C apps/mfe-vehicles build && pnpm -C apps/mfe-vehicles serve:remote",    
-    "dev:mobile": "pnpm -C apps-mobile/mobile-app start"
+    "dev:dashboard": "pnpm -C apps/mfe-dashboard dev",
+    "dev:users": "pnpm -C apps/mfe-users dev",
+    "dev:all": "concurrently -n shell,dashboard,users -c auto \"pnpm -C apps/web-shell dev\" \"pnpm -C apps/mfe-dashboard dev\" \"pnpm -C apps/mfe-users dev\""
   },
   "devDependencies": {
-    "typescript": "^5.6.3"
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "autoprefixer": "10",
+    "postcss": "8",
+    "tailwindcss": "3.4.17",
+    "typescript": "^5.9.3"
   }
 }

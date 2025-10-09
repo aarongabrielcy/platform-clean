@@ -1,19 +1,12 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import "../index.css";
+import { Routes, Route, Link } from "react-router-dom";
 import UsersRoutes from "./routes";
 
 export default function UsersApp() {
   return (
-    <div>
-      <h2>Users (MFE)</h2>
-      <nav style={{ display: "flex", gap: 12, marginBottom: 12 }}>
-        <Link to="/users">Lista</Link>
-        <Link to="/users/detail/100">Detalle #100</Link>
-      </nav>
-      <Routes>
-        <Route path="/*" element={<UsersRoutes />} />
-      </Routes>
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold text-white">Users (MFE)</h2>
+      <UsersRoutes />
     </div>
   );
 }

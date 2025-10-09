@@ -3,7 +3,12 @@ import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
-  server: { port: 5002, cors: true, strictPort: true },
+  server: { 
+    port: 5002, 
+    cors: true,
+    strictPort: true,
+    fs: { allow: [".."] } // permite ver cambios en RAIZ/packages/
+   },
   plugins: [
     react(),
     federation({
@@ -21,7 +26,7 @@ export default defineConfig({
   ],
   build: {
     target: "esnext",
-    cssCodeSplit: false,
+    cssCodeSplit: true,  // mejor true para separar CSS (en build)
     modulePreload: false,
     minify: false
   }
