@@ -1,9 +1,7 @@
+@import "@platform/styles/index.css";
+/* (Opcional) utilidades/overrides propias del ui-web */
+@import "@platform/ui-web/css" layer(components);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/** { box-sizing: border-box; }
-body, html, #root { margin: 0; padding: 0; height: 100%; }
-a { color: #1f6feb; text-decoration: none; }
-a:hover { text-decoration: underline; }
-button { cursor: pointer; }*/

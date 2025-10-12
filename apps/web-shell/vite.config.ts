@@ -1,18 +1,26 @@
 ﻿import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+import svgr from "vite-plugin-svgr";
+
 
 export default defineConfig({
   server: { 
     port: 5000,
     strictPort: true,
-    fs: { allow: [".."] } // 👈 para hot-reload si usas /packages/*
+    fs: { allow: [".."] } //para hot-reload si usas /packages/*
   },
   optimizeDeps: {
     // evita prebundles separados en dev
   },
   plugins: [
     react(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+        svgo: true,
+      },
+    }),
     federation({
       name: "web_shell",
       remotes: {
@@ -27,5 +35,10 @@ export default defineConfig({
         "@tanstack/react-query": { requiredVersion: false },
       }
     })
-  ]
+  ],build: {
+    target: "esnext",
+    cssCodeSplit: true,  // mejor true para separar CSS (en build)
+    modulePreload: false,
+    minify: false
+  }
 });
