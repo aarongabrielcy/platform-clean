@@ -7,16 +7,11 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   asChild?: boolean;
 };
 
-export function Button({ asChild, className, variant = "primary", size = "md", ...rest }: ButtonProps) {
+/*export function Button({ asChild, className, variant = "primary", size = "md", ...rest }: ButtonProps) {
   const base = "btn"; // tu clase base
   return <button {...rest} className={cx(base, className)} />;
-}
-/*export function Button({
-  className,
-  variant = "primary",
-  size = "md",
-  ...rest
-}: ButtonProps) {
+}*/
+export function Button({ asChild, className, variant = "primary", size = "md", ...rest }: ButtonProps) {
   const base = "btn"; // definida en @platform/styles/index.css
   const variantCls =
     variant === "primary"
@@ -29,4 +24,4 @@ export function Button({ asChild, className, variant = "primary", size = "md", .
     : size === "lg" ? "px-4 py-3 text-base"
     : "px-3 py-2 text-sm";
   return <button {...rest} className={cx(base, variantCls, sizeCls, className)} />;
-}*/
+}

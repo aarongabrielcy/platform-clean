@@ -11,10 +11,10 @@ type CardProps = {
 
 export function Card({ title, subtitle, className, children, headerRight }: CardProps) {
   return (
-    <section className={cx("card", className)}>
+    <section className={cx("card bg-white border border-transparent", className)}>
       {(title || subtitle || headerRight) && (
         <div className="mb-3 flex items-center justify-between gap-4">
-          <div>
+          <div >
             {title && <h3 className="card-title">{title}</h3>}
             {subtitle && <p className="card-subtle">{subtitle}</p>}
           </div>

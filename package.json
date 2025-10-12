@@ -6,6 +6,7 @@
     "dev:shell": "pnpm -C apps/web-shell dev",
     "dev:dashboard": "pnpm -C apps/mfe-dashboard dev",
     "dev:users": "pnpm -C apps/mfe-users dev",
+    "dev:vehicles": "pnpm -C apps/mfe-vehicles dev",
     "dev:all": "concurrently -n shell,dashboard,users -c auto \"pnpm -C apps/web-shell dev\" \"pnpm -C apps/mfe-dashboard dev\" \"pnpm -C apps/mfe-users dev\""
   },
   "devDependencies": {
