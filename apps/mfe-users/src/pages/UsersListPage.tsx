@@ -57,8 +57,8 @@ export default function UsersListPage() {
   return (
     <div className="space-y-4">
       <Card
-        title="Usuarios"
-        subtitle="Listado"
+        title=""
+        subtitle=""
         headerRight={<Button onClick={() => alert("Crear usuario")}>Nuevo</Button>}
       >
         {loading && <div className="p-4 text-white/70">Cargando…</div>}
