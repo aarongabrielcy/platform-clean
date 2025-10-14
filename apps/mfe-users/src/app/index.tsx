@@ -5,7 +5,15 @@ import UsersRoutes from "./routes";
 export default function UsersApp() {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-semibold text-slice-300 bg-white border border-slice-300">Users (MFE)</h2>
+      <nav className="bg-grey-light p-3 rounded font-sans w-full m-4">
+        <ol className="list-reset flex text-grey-dark">
+          <li><a href="#" className="text-blue font-bold">Home</a></li>
+          <li><span className="mx-2">/</span></li>
+          <li><a href="#" className="text-blue font-bold">Users</a></li>
+          <li><span className="mx-2">/</span></li>
+          <li>List</li>
+        </ol>
+      </nav>
       <UsersRoutes />
     </div>
   );
