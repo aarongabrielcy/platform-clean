@@ -6,6 +6,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   hint?: string;
   error?: string;
   wrapperClassName?: string;
+  leftIcon?: React.ReactNode;        //nuevo
 };
 
 export function Input({
@@ -14,22 +15,34 @@ export function Input({
   error,
   wrapperClassName,
   className,
+  leftIcon,
   ...rest
 }: InputProps) {
   return (
     <label className={cx("block space-y-1", wrapperClassName)}>
-      {label && <span className="text-sm text-white/80">{label}</span>}
-      <input
-        {...rest}
-        className={cx(
-          "w-full rounded-md bg-white/5 text-white placeholder-white/50",
-          "border border-white/10 focus:border-brand-500 focus:ring-0",
-          "px-3 py-2 outline-none",
-          className
+      {label && <span className="text-sm text-slate-600">{label}</span>}
+
+      <div className="relative">
+        {leftIcon && (
+          <span className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-slate-400">
+            {leftIcon}
+          </span>
         )}
-      />
-      {hint && !error && <span className="text-xs text-white/50">{hint}</span>}
-      {error && <span className="text-xs text-red-300">{error}</span>}
+
+        <input
+          {...rest}
+          className={cx(
+            "w-full h-9 bg-transparent text-slate-700 placeholder-slate-400",
+            "border-b border-slate-300 focus:border-blue-500 focus:outline-none",
+            "pr-2",
+            leftIcon ? "pl-8" : "pl-3",
+            className
+          )}
+        />
+      </div>
+
+      {hint && !error && <span className="text-xs text-slate-500">{hint}</span>}
+      {error && <span className="text-xs text-red-500">{error}</span>}
     </label>
   );
 }

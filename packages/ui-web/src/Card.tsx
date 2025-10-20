@@ -11,7 +11,7 @@ type CardProps = {
 
 export function Card({ title, subtitle, className, children, headerRight }: CardProps) {
   return (
-    <section className={cx("card bg-white border border-transparent", className)}>
+    <section className={cx("card bg-white border border-slate-200", className)}>
       {(title || subtitle || headerRight) && (
         <div className="mb-3 flex items-center justify-between gap-4">
           <div >

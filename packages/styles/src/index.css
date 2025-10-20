@@ -19,9 +19,14 @@
   }
 }
 
+/* scrollbars suaves (opcionales) */
+.table-scroll::-webkit-scrollbar { height: 10px; width: 10px; }
+.table-scroll::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 8px; }
+.table-scroll::-webkit-scrollbar-track { background: transparent; }
+
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center px-4 py-2 rounded-md bg-indigo-600 text-white text-sm font-medium shadow-sm;
+    @apply inline-flex items-center  px-4 py-2 rounded-md bg-white text-slate-700 text-sm font-medium shadow-sm border border-green-300;
   }
   .card {
     background: var(--card-bg);

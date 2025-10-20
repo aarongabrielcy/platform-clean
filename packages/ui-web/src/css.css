@@ -3,6 +3,9 @@
 /* Útiles opcionales (ejemplo) */
 @layer components {
   .btn-ghost {
-    @apply text-white/90 hover:text-white hover:bg-white/10;
+    @apply text-red-400 hover:text-green-400 hover:bg-blue-400;
+  }
+  .btn-soft {
+    @apply bg-gray-100 text-gray-800 hover:bg-gray-200 text-white; 
   }
 }

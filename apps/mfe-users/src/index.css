@@ -1,11 +1,16 @@
-/* apps/mfe-users/src/index.css */
-/* Estilos compartidos (btn, card, tokens) */
-@import "@platform/styles/index.css";
-/* (Opcional) utilidades/overrides propias del ui-web */
+/* 1) Declara el orden de capas una vez */
+@layer base, components, utilities;
+
+/* 2) Coloca los imports ARRIBA y explícales su capa */
+@import "@platform/styles/index.css" layer(base);
 @import "@platform/ui-web/css" layer(components);
 
+/* 3) Tailwind genera sus capas después (ok porque ya fijamos el orden) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* 4) (Opcional) overrides locales */
+@layer components {
+  /* tus ajustes de la app */
+}
