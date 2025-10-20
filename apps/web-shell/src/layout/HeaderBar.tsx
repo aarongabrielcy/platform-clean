@@ -3,7 +3,7 @@ import UserMenu from "../components/UserMenu";
 import { Icon } from "../components/Icon";
 export default function HeaderBar() {
   return (
-    <header className="w-full bg-white h-16 border-b border-gray-200">
+    <header className="fixed top-0 left-14 right-0 z-40 bg-white h-16 border-b border-gray-200">
       <nav className="flex h-full items-center justify-between px-4">
         {/* Título / breadcrumb */}
         <div className="flex items-center gap-3">

@@ -9,5 +9,8 @@ module.exports = {
     // opcional: si reusas componentes TS/TSX desde packages
     //'../../packages/**/*.{ts,tsx}'
   ],
-  darkMode: 'class'
+  darkMode: 'class',
+  theme: {
+    extend: {},
+  }
 };

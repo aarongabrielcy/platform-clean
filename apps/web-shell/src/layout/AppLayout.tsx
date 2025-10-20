@@ -16,13 +16,13 @@ export default function AppLayout() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex bg-gray-100 text-gray-700">
+    <div className="h-screen w-screen flex bg-gray-100 text-gray-700 overflow-x-hidden">
       <SideBar />
       <div className="flex-1 pl-14">
         <HeaderBar />
         <SubSidebar />
           {/* <DevHUD /><-- temporal */}
-          <main className={`px-4 transition-[padding] duration-200 ${isSubSidebarOpen ? "xl:pl-72" : ""}`+""}>
+          <main className={`px-4 pt-16 transition-[padding] duration-200 overflow-x-hidden ${isSubSidebarOpen ? "xl:pl-72" : ""}`}>
           <Outlet />
         </main>
       </div>

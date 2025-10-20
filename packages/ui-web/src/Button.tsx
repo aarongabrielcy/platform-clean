@@ -2,7 +2,7 @@ import React from "react";
 import { cx } from "./utils/cx";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "ghost" | "soft";
+  variant?: "primary" | "ghost" | "soft" | "secondary";
   size?: "sm" | "md" | "lg";
   asChild?: boolean;
 };
@@ -18,7 +18,12 @@ export function Button({ asChild, className, variant = "primary", size = "md", .
       ? "btn-primary"
       : variant === "ghost"
       ? "btn-ghost"
-      : "bg-white/10 text-white hover:bg-white/20";
+      : variant === "secondary"
+      ? "btn-secondary"
+      : variant === "soft"
+      ? "btn-soft"
+      : "bg-white/10 text-white hover:bg-white/20"
+      
   const sizeCls =
     size === "sm" ? "px-2 py-1 text-sm"
     : size === "lg" ? "px-4 py-3 text-base"
