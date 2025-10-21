@@ -6,6 +6,7 @@ export { default as Pagination } from "./Pagination";
 export { DataTableSplit } from "./DataTableSplit";
 export { default as Select } from "./Select";
 export { default as FooterBar } from "./FooterBar";
+export { default as IconButton } from "./IconButton";
 
 export * from "./Button";
 export * from "./Card";

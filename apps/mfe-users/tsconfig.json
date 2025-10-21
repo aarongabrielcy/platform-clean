@@ -1,14 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "skipLibCheck": true,
-    "types": ["vite/client"],
-    "paths": {}
+    "types": ["vite/client", "react"]
   },
-  "include": ["src", "src/**/*.d.ts", "vite-env.d.ts"]
+  "include": ["src", "src/vite-env.d.ts"]
 }

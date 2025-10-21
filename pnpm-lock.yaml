@@ -109,6 +109,9 @@ importers:
       vite:
         specifier: ^5.4.8
         version: 5.4.20
+      vite-plugin-svgr:
+        specifier: ^4.5.0
+        version: 4.5.0(rollup@4.52.4)(typescript@5.9.3)(vite@5.4.20)
 
   apps/mfe-vehicles:
     dependencies:
@@ -195,6 +198,8 @@ importers:
       vite-plugin-svgr:
         specifier: ^4.5.0
         version: 4.5.0(rollup@4.52.4)(typescript@5.9.3)(vite@5.4.20)
+
+  packages/assets: {}
 
   packages/styles: {}
 
