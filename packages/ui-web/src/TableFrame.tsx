@@ -2,7 +2,7 @@
 import React from "react";
 
 type Props = {
-  title?: string;
+  title?: React.ReactNode;
   actions?: React.ReactNode;
 
   /** Modo legacy: una sola tabla */
@@ -30,7 +30,7 @@ export default function TableFrame({
   return (
     <div className="bg-white border border-slate-200 rounded-md shadow-sm flex flex-col pt-2">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py3 border-b border-slate-200">
+      <div className="flex items-center justify-between px-4 py3 pb-3 border-b border-slate-200">
         <h2 className="text-base font-semibold text-gray-800">{title}</h2>
         <div className="flex items-center gap-2">{actions}</div>
       </div>

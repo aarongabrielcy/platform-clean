@@ -1,1 +1,1 @@
-//export { default as PlusUser } from "./plus-circle.svg?react";
+export { default as PlusUser } from "./plus-svg.svg?react";

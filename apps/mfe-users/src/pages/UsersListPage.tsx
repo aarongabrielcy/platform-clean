@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  PageContainer, PageHeader, TableFrame, Pagination, FooterBar,
+  Breadcrumbs, PageContainer, PageHeader, TableFrame, Pagination, FooterBar,
   DataTableSplit, Input, Button, type Column
 } from "@platform/ui-web";
 import UsersFilters, { UsersFilterValue } from "../components/UsersFilters";
@@ -53,41 +53,38 @@ export default function UsersListPage() {
   const paged = filtered.slice(start, start + pageSize);
 
   const clearFilters = () => { setFilters({}); setPage(1); };
-
+  const breadcrumbs = [
+    { label: "Home", to: "/" },
+    { label: "Users", to: "/users" },
+    { label: "List" },
+  ];
   if (loading) return <PageContainer className="pt-4">Cargando…</PageContainer>;
   if (error)   return <PageContainer className="pt-4 text-red-600">Error: {error}</PageContainer>;
 
   return (
     <PageContainer className="pb-14">
-     <PageHeader
+     {/*<PageHeader
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Users", to: "/users" },
           { label: "List" },
         ]}
         title=""
-        actions={/*<Button className="h-9" onClick={() => alert("Nuevo")}>Nuevo</Button> */ null}
-      />
+        actions={<Button className="h-9" onClick={() => alert("Nuevo")}>Nuevo</Button> null}
+      />*/}
       {/* Tabla con header fijo */}
       <DataTableSplit<User> columns={columns} rows={paged}
         onRowClick={(row) => navigate(`/users/detail/${row.id}`)}
       >
         {({ header, body }) => (
           <TableFrame
-          title="Users"
+          title={<Breadcrumbs items={breadcrumbs} className="-ml-2" />}
           actions={
-           <div className="mb-3">
-              {/*<PageHeader
-        breadcrumbs={[
-          { label: "Home", to: "/" },
-          { label: "Users", to: "/users" },
-          { label: "List" },
-        ]}
-        title=""
-        actions={<Button className="h-9" onClick={() => alert("Nuevo")}>Nuevo</Button>}
-      />*/}
-              <UsersFilters value={filters} onChange={(v) => { setFilters(v); setPage(1); }} onClear={clearFilters} />
-            </div>
+           <UsersFilters
+              value={filters}
+              onChange={(v) => { setFilters(v); setPage(1); }}
+              onClear={clearFilters}
+            />
           }
             tableHeader={header}
             tableBody={body}

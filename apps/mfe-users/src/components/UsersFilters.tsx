@@ -1,5 +1,7 @@
 import React from "react";
-import { Input, Button, Select } from "@platform/ui-web";
+import { Input, IconButton, Select } from "@platform/ui-web";
+import { Icon } from "./Icon";
+import { PlusUser } from "../assets/icons";
 
 export type UsersFilterValue = {
   id?: string;
@@ -90,10 +92,13 @@ export default function UsersFilters({
         placeholder="Estado"
         leftIcon={StatusIcon}
       />
-
-      <Button className="h-9 ml-auto" variant="soft" onClick={onClear}>
-        Limpiar
-      </Button>
+      <IconButton
+        icon={PlusUser}
+        size="md"
+        tone="primary"
+        title="Nuevo usuario"
+        onClick={() => console.log("Nuevo usuario")}
+      />
     </div>
   );
 }

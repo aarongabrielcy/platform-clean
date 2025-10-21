@@ -2,11 +2,7 @@ import React from "react";
 import Breadcrumbs, { Crumb } from "./Breadcrumbs";
 
 /** Header de página (mismo ancho/centrado que PageContainer) */
-export default function PageHeader({
-  breadcrumbs,
-  title,
-  actions
-}: {
+export default function PageHeader({breadcrumbs, title, actions }: {
   breadcrumbs?: Crumb[];
   title?: string;
   actions?: React.ReactNode;

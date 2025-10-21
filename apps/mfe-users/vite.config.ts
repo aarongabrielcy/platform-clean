@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   server: { 
@@ -11,6 +12,7 @@ export default defineConfig({
    },
   plugins: [
     react(),
+    svgr({ svgrOptions: { icon: true, svgo: true } }),
     federation({
       name: "mfe_users",
       filename: "remoteEntry.js",
